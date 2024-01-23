@@ -18,7 +18,7 @@ TXTMAGE is a text-based conversational AI system that utilizes the power of the 
 To get started with TXTMAGE, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/your-username/TXTMAGE.git`
-2. create a .env file in root directory with the following variables
+2. create an .env file in root directory with the following variables
     ```
         DB_NAME=
         DB_USERNAME
