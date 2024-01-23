@@ -18,7 +18,21 @@ TXTMAGE is a text-based conversational AI system that utilizes the power of the 
 To get started with TXTMAGE, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/your-username/TXTMAGE.git`
-2. docker-compose up --build
+2. create a .env file in root directory with the following variables
+    DB_NAME=
+    DB_USERNAME
+    DB_PASSWORD
+    DB_HOSTNAME
+    DB_PORT
+    SECRET_KEY
+    DEBUG
+    ALLOWED_HOSTS
+    POSTGRES_USER
+    POSTGRES_PASSWORD
+    POSTGRES_DB
+    DJANGO_SETTINGS_MODULE
+    OPENAPI_KEY
+3. docker-compose up --build
 
 ## Usage
 
