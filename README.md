@@ -18,10 +18,7 @@ TXTMAGE is a text-based conversational AI system that utilizes the power of the 
 To get started with TXTMAGE, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/your-username/TXTMAGE.git`
-2. Install the required dependencies: `poetry install`
-3. Obtain an API key from OpenAI and set it as an environment variable.
-4. activate the enviroment : `poetry shell`
-4. Run the application: `python manage.py runserver`
+2. docker-compose up --build
 
 ## Usage
 
