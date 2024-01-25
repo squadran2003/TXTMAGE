@@ -3,12 +3,17 @@ let chatBotInputForm = document.getElementById("chatbox-input-form");
 let chatBotInput = document.getElementById("chatbox-input");
 let chats = document.getElementById("chats");
 let userQuestions = document.getElementById("questions");
-chatbox.style.height = "77vh";
+chatbox.style.height = "75vh";
 chatbox.style.width = "100%";
 chatbox.style.padding = "2px";
 chatbox.style.marginTop = "5px";
 chatbox.style.overflowY = "scroll";
 chatBotInput.style.overflowY = "scroll";
+
+userQuestions.style.height = "75vh";
+userQuestions.style.width = "100%";
+userQuestions.style.padding = "2px";
+userQuestions.style.overflowY = "scroll";
 
 progress.style.display = "none";
 
@@ -78,7 +83,6 @@ function displayChat() {
 
 chatBotInputForm.addEventListener("submit", function(event) {
     event.preventDefault();
-    console.log("chatBotInput")
     // get the value of the input field
     let chatBotInputValue = chatBotInput.value;
     chat.push({"role": "You", "content": chatBotInputValue});
@@ -93,8 +97,10 @@ chatBotInputForm.addEventListener("submit", function(event) {
     })
     .then(response => response.json())
     .then(data => {
-        userQuestionsList.push(chatBotInputValue);
-        chat.push({"role": "system", "content": data[0][1]});
+        // push to the front of the list
+
+        userQuestionsList.unshift(chatBotInputValue);
+        chat.push({"role": "system", "content": marked.parse(data[0][1])});
         chatBotInput.value = "";
         chatBotInput.focus();
         displayChat();
