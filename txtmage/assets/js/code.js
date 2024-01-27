@@ -27,13 +27,12 @@ function renderUserQuestions() {
     userQuestions.addClassName = "collections";
     for (let i = 0; i < userQuestionsList.length; i++) {
         let userQuestion = document.createElement("li");
-        userQuestion.classList.add("collection-item");
-        userQuestion.classList.add("avatar");
+        userQuestion.classList.add("chat-item-border");
         let spanIcon = document.createElement("span");
         spanIcon.classList.add("material-icons");
         spanIcon.textContent = "accessibility";
         userQuestion.appendChild(spanIcon);
-        userQuestion.style.backgroundColor= "rgb(121 78 79)";
+        userQuestion.style.backgroundColor= "rgb(39 31 31)";
         userQuestion.style.color = "white";
         userQuestion.style.padding = "5px";
         userQuestion.appendChild(document.createElement("br"));
@@ -55,28 +54,25 @@ function displayChat() {
     chats.innerHTML = "";
     for (let i = 0; i < chat.length; i++) {
         let chatItem = document.createElement("li");
-        chatItem.classList.add("collection-item");
-        chatItem.classList.add("avatar");
+        let span = document.createElement("span");
         if(chat[i]["role"]==="You") {
-            chatItem.style.backgroundColor = "rgb(255 219 230);";
+            chatItem.style.backgroundColor = "rgb(67 52 52)";
         }else{
-            let spanIcon = document.createElement("span");
-            spanIcon.classList.add("material-icons");
-            spanIcon.textContent = "dvr";
-            chatItem.appendChild(spanIcon);
-            chatItem.style.backgroundColor= "rgb(121 44 47)";
-            chatItem.style.color = "white";
+            chatItem.style.backgroundColor= "rgb(72 43 44)";
             
         }
-        let span = document.createElement("span");
-        span.classList.add("title");
+        chatItem.style.color = "white";
+        // create a round border on the span tag
+        chatItem.classList.add("chat-item-border");
         span.innerHTML = chat[i]["role"];
         let p = document.createElement("p");
         p.innerHTML = chat[i]["content"];
         chatItem.appendChild(span);
         chatItem.appendChild(p);
-        chatItem.appendChild(document.createElement("br"));
         chats.appendChild(chatItem);
+        //  remove borders from span tag
+        chatItem.appendChild(document.createElement("br"));
+        chats.appendChild(document.createElement("br"));   
     }
     chatbox.scrollTop = chatbox.scrollHeight;
 }
