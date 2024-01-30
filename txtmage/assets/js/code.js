@@ -30,9 +30,9 @@ function renderUserQuestions() {
         userQuestion.classList.add("chat-item-border");
         let spanIcon = document.createElement("span");
         spanIcon.classList.add("material-icons");
-        spanIcon.textContent = "accessibility";
+        spanIcon.textContent = "chat";
         userQuestion.appendChild(spanIcon);
-        userQuestion.style.backgroundColor= "rgb(39 31 31)";
+        userQuestion.style.backgroundColor= "#749976";
         userQuestion.style.color = "white";
         userQuestion.style.padding = "5px";
         userQuestion.appendChild(document.createElement("br"));
@@ -56,9 +56,9 @@ function displayChat() {
         let chatItem = document.createElement("li");
         let span = document.createElement("span");
         if(chat[i]["role"]==="You") {
-            chatItem.style.backgroundColor = "rgb(67 52 52)";
+            chatItem.style.backgroundColor = "#918533";
         }else{
-            chatItem.style.backgroundColor= "rgb(72 43 44)";
+            chatItem.style.backgroundColor= "#1f857b";
             
         }
         chatItem.style.color = "white";
