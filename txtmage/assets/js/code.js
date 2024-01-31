@@ -3,12 +3,12 @@ let chatBotInputForm = document.getElementById("chatbox-input-form");
 let chatBotInput = document.getElementById("chatbox-input");
 let chats = document.getElementById("chats");
 let userQuestions = document.getElementById("questions");
-chatbox.style.height = "75vh";
+chatbox.style.height = "70vh";
 chatbox.style.width = "100%";
 chatbox.style.padding = "2px";
 chatbox.style.marginTop = "5px";
 chatbox.style.overflowY = "scroll";
-chatBotInput.style.overflowY = "scroll";
+
 
 userQuestions.style.height = "75vh";
 userQuestions.style.width = "100%";
