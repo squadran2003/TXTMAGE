@@ -24,4 +24,6 @@ class ChatList(APIView):
 
 
 def index(request):
+    if not request.user.is_authenticated:
+        return render(request, 'login.html')
     return render(request, 'index.html')

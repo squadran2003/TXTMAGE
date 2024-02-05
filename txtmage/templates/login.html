@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'css/style.css' %}"  media="screen,projection"/>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <style>
+    #chatbox::-webkit-scrollbar{
+      width:5px;
+    }
+    #chatbox-input::-webkit-scrollbar{
+      width:5px;
+    }
+    #questions::-webkit-scrollbar{
+      width:5px;
+    }
+  </style>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="/">Turbotalk: powered by chat-gpt turbo</a></li>
+        </ul>
+      </div>
+    </nav>
+        <div class="row">
+            <div class="col s4"></div>
+            <div class="col s4">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input placeholder="email" id="first_name" type="email" class="validate">              
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i  class="material-icons prefix">visibility</i>
+                        <input  placeholder="password" id="last_name" type="password" class="validate">  
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        <a class="waves-effect waves-light btn-large" id="login">Login</a>
+                    </div>
+            </div>
+            <div class="col s4"></div>
+        </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="{% static 'js/code.js' %}"></script>
+  </body>
+</html>
