@@ -28,6 +28,9 @@
       <div class="nav-wrapper">
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a href="sass.html">Turbotalk: powered by chat-gpt turbo</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="/logout">Logout</a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
@@ -46,6 +49,7 @@
                 </ul>
               </div>
               <form id="chatbox-input-form">
+                {% csrf_token %}
                     <div class="input-field">
                         <textarea id="chatbox-input"></textarea>
                         <div class="progress" id="progress">

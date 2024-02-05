@@ -31,31 +31,31 @@
         </ul>
       </div>
     </nav>
-        <div class="row">
-            <div class="col s4"></div>
-            <div class="col s4">
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i class="material-icons prefix">email</i>
-                        <input placeholder="email" id="first_name" type="email" class="validate">              
-                    </div>
+          <form id="login-form" style="padding: 5%;" method="POST" action="{% url 'authenticate' %}">
+            {% csrf_token %}
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="material-icons prefix">email</i>
+                    <input placeholder="email or username" name="email" id="email" type="text" class={{error_class}}>              
                 </div>
-                <div class="row">
-                    <div class="input-field col s12">
-                        <i  class="material-icons prefix">visibility</i>
-                        <input  placeholder="password" id="last_name" type="password" class="validate">  
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12">
-                        <a class="waves-effect waves-light btn-large" id="login">Login</a>
-                    </div>
             </div>
-            <div class="col s4"></div>
-        </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <i  class="material-icons prefix">visibility</i>
+                    <input  placeholder="password" name="password" id="password" type="password" class={{error_class}}>
+                    <span class="helper-text" style="color:red">{{error}}</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                  <button class="btn waves-effect waves-light btn-large" type="submit">Submit
+                  </button>
+                        
+                </div>
+            </div>
+        </form>
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="{% static 'js/code.js' %}"></script>
   </body>
 </html>

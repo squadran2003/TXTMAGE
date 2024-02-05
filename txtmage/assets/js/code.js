@@ -3,6 +3,9 @@ let chatBotInputForm = document.getElementById("chatbox-input-form");
 let chatBotInput = document.getElementById("chatbox-input");
 let chats = document.getElementById("chats");
 let userQuestions = document.getElementById("questions");
+let csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+
 chatbox.style.height = "70vh";
 chatbox.style.width = "100%";
 chatbox.style.padding = "2px";
@@ -16,6 +19,7 @@ userQuestions.style.padding = "2px";
 userQuestions.style.overflowY = "scroll";
 
 progress.style.display = "none";
+
 
 let chat = [
     {"role": "system", "content": "What can I help you with today?"},
@@ -87,7 +91,8 @@ chatBotInputForm.addEventListener("submit", function(event) {
     const response = fetch('/chat/', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'X-CSRFToken': csrftoken
         },
         body: JSON.stringify({'message':chatBotInputValue})
     })
