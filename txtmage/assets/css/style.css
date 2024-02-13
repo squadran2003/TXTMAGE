@@ -4,10 +4,21 @@
     padding: 10px;
     margin-bottom: 10px;
 }
-body {
-   background-color: #e3f2fd;
+/* body {
+
+} */
+.custom-input-container, .custom-image-container {
+  margin-top:100px;
 }
-textarea{
+.custom-input-container input:placeholder-shown + label {
+  color:black;
+
+}
+.image-result {
+  height:70vh;
+  max-width: 100%;
+}
+/* textarea{
     width: 100%;
     height: 10vh;
     padding: 10px;
@@ -23,4 +34,4 @@ textarea{
     outline: none; /* Remove default focus outline */
     border-color: #64b5f6; /* Change border color on focus */
     box-shadow: 0 0 8px rgba(100, 181, 246, 0.7); /* Adjust box shadow on focus */
-  }
+  } */

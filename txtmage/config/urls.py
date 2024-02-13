@@ -16,11 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from config.views import ChatList, index, authenticate_user, logoutUser
+from config.views import ImageGenerateList, index, authenticate_user, logoutUser
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("chat/", ChatList.as_view(), name="chat"),
+    path("image/generate/", ImageGenerateList.as_view(), name="chat"),
     path("authenticate/", authenticate_user, name="authenticate"),
     path('logout/', logoutUser, name="logout"),
     path("", index, name="index"),

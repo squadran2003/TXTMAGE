@@ -14,20 +14,23 @@ client = OpenAI(
 )
 
 
-class ChatList(APIView):
+class ImageGenerateList(APIView):
     permission_classes = [IsAuthenticated]
 
 
     def post(self, request, format=None):
-        chat = [
-            {"role": "system", "content": "You are a helpful assistant."}
-        ]
-        chat.append({"role": "user", "content": request.data["message"]})
-        completion = client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=chat,
-        )
-        return Response(completion.choices[0].message, status=status.HTTP_201_CREATED)
+        try:
+            response = client.images.generate(
+                model="dall-e-3",
+                prompt=request.data["message"],
+                size="1024x1024",
+                quality="standard",
+                n=1,
+            )
+        except Exception as e:
+            return Response(e, status=status.HTTP_400_BAD_REQUEST)
+        image_url = response.data[0].url
+        return Response([image_url], status=status.HTTP_201_CREATED)
 
 
 def index(request):
