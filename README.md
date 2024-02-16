@@ -1,17 +1,11 @@
 # TXTMAGE
 
-This project aims to be a clone of Chat GPT using the OpenAI API.
+This project is me experimenting with Open AI Dalle3 API.
 
 ## Overview
 
-TXTMAGE is a text-based conversational AI system that utilizes the power of the OpenAI API to generate human-like responses. It is designed to simulate natural language conversations and provide intelligent responses to user inputs.
+TXTMAGE is a text-based AI system that utilizes the power of the OpenAI API Dalle3  to generate images based on a text prompt.
 
-## Features
-
-- Conversational AI: TXTMAGE leverages the OpenAI API to generate responses that mimic human-like conversations.
-- Easy Integration: The project provides a simple and straightforward interface to interact with the conversational AI system.
-- Customization: TXTMAGE can be fine-tuned and customized to suit specific use cases and requirements.
-- Scalability: The project is designed to handle a large number of concurrent conversations, making it suitable for various applications.
 
 ## Getting Started
 
